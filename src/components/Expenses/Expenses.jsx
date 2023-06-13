@@ -8,6 +8,18 @@ import './Expenses.css';
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
+  const [listData, setListData] = useState({
+    isShowList: true
+  })
+
+  function handleDelete(id) {
+    const newList = listData.list.filter((item) => item.id !== id)
+    setListData({...listData, list: newList})
+  }
+
+  if (!listData.isShowList) {
+    return null
+  }
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -19,11 +31,11 @@ const Expenses = (props) => {
   if (filteredExpenses.length > 0) {
     expensesContent = filteredExpenses.map((expense) => (
       <ExpenseItem
-            key={`${expense.id}`}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
+        key={`${expense.id}`}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
     ))
   }
   return (
@@ -35,7 +47,7 @@ const Expenses = (props) => {
         />
         {expensesContent}
         <ExpensesChart expenses={filteredExpenses} />
-        <ExpensesList items={filteredExpenses} />
+        <ExpensesList onRemove={handleDelete} items={filteredExpenses} />
       </Card>
     </div>
   );

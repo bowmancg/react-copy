@@ -3,10 +3,10 @@ import './ExpenseItem.css'
 import Card from "../UI/Card";
 import ExpenseDate from './ExpenseDate'
 
-const ExpenseItem = (props) => {
+const ExpenseItem = props => {
     const onClickHandler = () => {
         console.log('deleting')
-        props.onDelete(props.key)
+        props.onDelete(props.id)
     }
     return (
         <Card className='expense-item'>

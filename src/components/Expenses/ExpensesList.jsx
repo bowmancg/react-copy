@@ -17,7 +17,7 @@ const ExpensesList = (props) => {
             {props.items.map((expense) => (
                 <ExpenseItem
                 id={expense.id}
-                onDelete={props.onDelete}
+                onDelete={handleItemDelete}
                 key={expense.id}
                 title={expense.title}
                 amount={expense.amount}

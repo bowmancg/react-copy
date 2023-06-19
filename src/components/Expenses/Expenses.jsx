@@ -10,10 +10,6 @@ const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
   const [expenseItems, setExpenseItems] = useState()
 
-  const handleDelete = () => {
-    
-  }
-
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
@@ -40,7 +36,7 @@ const Expenses = (props) => {
           onChangeFilter={filterChangeHandler}
         />
         <ExpensesChart expenses={filteredExpenses} />
-        <ExpensesList onDelete={handleDelete} items={filteredExpenses} />
+        <ExpensesList onDelete={props.onDelete} items={filteredExpenses} />
       </Card>
     </div>
   );

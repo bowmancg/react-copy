@@ -3,7 +3,8 @@ import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 import Navbar from './components/UI/Navbar';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 const App = () => {
   const DUMMY_DATA = [

@@ -15,14 +15,26 @@ const ExpenseForm = (props) => {
         setEnteredTitle(event.target.value)
     }
     const amountChangeHandler = (event) => {
+        if (event.target.value.trim().length > 0) {
+            setIsValid(true)
+        }
         setEnteredAmount(event.target.value)
     }
     const dateChangeHandler = (event) => {
+        if (event.target.value.trim().length > 0) {
+            setIsValid(true)
+        }
         setEnteredDate(event.target.value)
     }
     const submitHandler = (event) => {
         event.preventDefault()
         if (enteredTitle.trim().length === 0) {
+            setIsValid(false)
+        }
+        if (enteredAmount.trim().length === 0) {
+            setIsValid(false)
+        }
+        if (enteredDate.trim().length === 0) {
             setIsValid(false)
         }
         const expenseData = {

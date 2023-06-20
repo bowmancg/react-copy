@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
-
+import Navbar from './components/UI/Navbar';
 
 
 const App = () => {
@@ -42,6 +42,9 @@ const App = () => {
 
   return (
     <div>
+      <header>
+        <Navbar/>
+      </header>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses onDelete={handleDelete} items={expenses} />
     </div>

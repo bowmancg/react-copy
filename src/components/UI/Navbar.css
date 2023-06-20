@@ -1,5 +1,12 @@
 .Navbar {
     background: blue;
     width: 100%;
-    
+    height: 4rem;
+    display: block;
+    padding: 8px;
+}
+
+h1 {
+    margin: 8px;
+    font-size: 40px;
 }

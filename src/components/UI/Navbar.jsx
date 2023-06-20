@@ -1,8 +1,9 @@
 import React from "react";
+import './Navbar.css'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg p-3 bg-primary">
+        <nav className="Navbar">
             <h1>React Copy</h1>
         </nav>
     )
